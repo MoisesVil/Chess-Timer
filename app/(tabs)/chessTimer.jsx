@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function ChessTimer() {
-  const [player1Time, setPlayer1Time] = useState(600); // 10 minutes = 600s
-  const [player2Time, setPlayer2Time] = useState(600);
+export default function ChessTimer({time}) {
+  const [player1Time, setPlayer1Time] = useState(time); // time in seconds
+  const [player2Time, setPlayer2Time] = useState(time);
   const [activePlayer, setActivePlayer] = useState(null); // "p1" or "p2"
   const intervalRef = useRef(null);
 
