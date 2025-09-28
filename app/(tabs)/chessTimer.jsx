@@ -26,7 +26,7 @@ export default function ChessTimer({time, goBack}) {
     }
 
     return () => clearInterval(intervalRef.current);
-  }, [activePlayer]);
+  }, [activePlayer, isPaused]);
 
   // Format time mm:ss
   const formatTime = (seconds) => {
