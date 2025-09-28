@@ -135,8 +135,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     alignItems: "center",
     paddingVertical: 50,
-    borderTopRightRadius: 20,
-    borderBottomRightRadius: 20,
   },
   iconButton: {
     width: 70,
