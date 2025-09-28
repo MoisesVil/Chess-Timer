@@ -2,7 +2,7 @@ import { FontAwesome, MaterialIcons } from '@expo/vector-icons';
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function ChessTimer({time, goBack}) {
+export default function ChessTimer({time, increment, goBack}) {
   const [player1Time, setPlayer1Time] = useState(time); // time in seconds
   const [player2Time, setPlayer2Time] = useState(time);
   const [activePlayer, setActivePlayer] = useState(null); // "p1" or "p2"
@@ -85,7 +85,13 @@ export default function ChessTimer({time, goBack}) {
         {/* Player 1 Timer */}
         <TouchableOpacity
           style={[styles.timer, styles.upsideDown, isPlayer1Disabled && styles.disabledTimer]}
-          onPress={() => !isPaused && setActivePlayer("p2")}
+            onPress={() => {
+              if (!isPaused && activePlayer !== "p2") {
+                // Add increment to player1 if switching to p2
+                if (activePlayer === "p1") setPlayer1Time((prev) => prev + increment);
+                setActivePlayer("p2");
+              }
+            }}
           disabled={isPlayer1Disabled}
         >
           <Text style={styles.timerText}>{formatTime(player1Time)}</Text>
@@ -101,7 +107,13 @@ export default function ChessTimer({time, goBack}) {
         {/* Player 2 Timer */}
         <TouchableOpacity
           style={[styles.timer, isPlayer2Disabled && styles.disabledTimer]}
-          onPress={() => !isPaused && setActivePlayer("p1")}
+            onPress={() => {
+              if (!isPaused && activePlayer !== "p1") {
+                // Add increment to player2 if switching to p1
+                if (activePlayer === "p2") setPlayer2Time((prev) => prev + increment);
+                setActivePlayer("p1");
+              }
+            }}
           disabled={isPlayer2Disabled}
         >
           <Text style={styles.timerText}>{formatTime(player2Time)}</Text>
