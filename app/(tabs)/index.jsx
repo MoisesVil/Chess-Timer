@@ -15,7 +15,7 @@ export default function IndexPage() {
 
   if (selectedGame) {
     // Render ChessTimer with selected minutes
-    return <ChessTimer time={selectedGame.seconds} />;
+    return <ChessTimer time={selectedGame.seconds} goBack={() => setSelectedGame(null)} />;
   }
 
   return (

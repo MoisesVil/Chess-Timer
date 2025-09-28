@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
-export default function ChessTimer({time}) {
+export default function ChessTimer({time, goBack}) {
   const [player1Time, setPlayer1Time] = useState(time); // time in seconds
   const [player2Time, setPlayer2Time] = useState(time);
   const [activePlayer, setActivePlayer] = useState(null); // "p1" or "p2"
@@ -48,6 +48,11 @@ export default function ChessTimer({time}) {
         <Text style={styles.timerText}>{formatTime(player1Time)}</Text>
       </TouchableOpacity>
 
+      {/* Back to Menu Button */}
+      <TouchableOpacity style={styles.backButton} onPress={goBack}>
+        <Text style={styles.backButtonText}>Back to Menu</Text>
+      </TouchableOpacity>
+
       {/* Player 2 Timer */}
       <TouchableOpacity
         style={[
@@ -89,5 +94,16 @@ const styles = StyleSheet.create({
   },
   upsideDown: {
     transform: [{ rotate: "180deg" }],
+  },
+  backButton: {
+    backgroundColor: "tomato",
+    paddingVertical: 15,
+    paddingHorizontal: 30,
+    borderRadius: 20,
+  },
+  backButtonText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#fff",
   },
 });
