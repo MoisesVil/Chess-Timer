@@ -1,4 +1,4 @@
-// App.js or IndexPage.js
+// index.jsx
 import { useState } from "react";
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import ChessTimer from "./chessTimer"; // import your timer component
@@ -8,7 +8,7 @@ export default function IndexPage() {
   const [increment, setIncrement] = useState("0"); // default increment in seconds
   const [startGame, setStartGame] = useState(false);
 
-  // Define your game options
+  // Game options
   const gameOptions = [
     { label: "Normal Match (20 min)", seconds: 60*20 },
     { label: "Quick Match (10 min)", seconds: 60*10 },
@@ -34,6 +34,7 @@ export default function IndexPage() {
     <View style={styles.container}>
       <Text style={styles.title}>Select Game Type</Text>
 
+      {/* Game Options (time in game) */}
       {gameOptions.map((option, index) => (
         <TouchableOpacity
           key={index}
@@ -44,6 +45,7 @@ export default function IndexPage() {
         </TouchableOpacity>
       ))}
 
+      {/* Increment Input */}
       <View style={styles.incrementContainer}>
         <Text style={styles.incrementLabel}>Increment (seconds):</Text>
         <TextInput
@@ -54,6 +56,8 @@ export default function IndexPage() {
           placeholder="0"
           placeholderTextColor="#bbb"
         />
+
+        {/* Start Game Button */}
         <TouchableOpacity
           style={styles.startButton}
           onPress={() => setStartGame(true)}

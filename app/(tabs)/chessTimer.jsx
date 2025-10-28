@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 export default function ChessTimer({time, increment, goBack}) {
   const [player1Time, setPlayer1Time] = useState(time); // time in seconds
-  const [player2Time, setPlayer2Time] = useState(time);
+  const [player2Time, setPlayer2Time] = useState(time); // time in seconds
   const [activePlayer, setActivePlayer] = useState(null); // "p1" or "p2"
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef(null);
