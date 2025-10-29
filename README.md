@@ -1,50 +1,73 @@
-# Welcome to your Expo app 👋
+# ♟️ Chess Timer App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+[![React Native](https://img.shields.io/badge/React%20Native-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo-000000?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=000)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-## Get started
+A clean and simple **React Native chess timer** that lets players easily track their time during matches. Choose your game type, set custom increments, and manage the clock with an intuitive and visually appealing UI.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## 📱 Screenshots
 
-2. Start the app
+| Game Selection | Timer Screen | Paused Match |
+|----------------|---------------|---------------|
+| <img width="1206" height="2622" alt="Chess_Timer_Home_Screen" src="https://github.com/user-attachments/assets/19e0110f-fd8b-4c86-a5c1-f0c4687c9d0e" /> | <img width="1206" height="2622" alt="Chess_Timer_Game_Screen" src="https://github.com/user-attachments/assets/231ef258-bafb-40c4-a637-e04d7ac030e8" /> | <img width="1206" height="2622" alt="Chess_Timer_Paused_Screen" src="https://github.com/user-attachments/assets/6567c65e-0bba-4889-b368-3ac3451195f9" /> |
 
-   ```bash
-   npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## 🎮 Features
+- Choose from multiple game modes:
+  - 🕒 **Normal Match (20 min)**
+  - ⚡ **Quick Match (10 min)**
+  - 🔥 **Blitz Match (5 min)**
+- Optional **increment** (extra seconds per move)
+- Clean and responsive design
+- Pause, reset, and resume timers anytime
+- Clear turn indicators
+- Built with **React Native + Expo**
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+---
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Getting Started
 
-## Get a fresh project
-
-When you're ready, run:
-
+### 1️⃣ Clone the repository
 ```bash
-npm run reset-project
+git clone https://github.com/MoisesVil/chess-timer-app.git
+cd chess-timer-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2️⃣ Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
 
-## Learn more
+### 3️⃣ Run the app
+```bash
+npm start
+# or
+expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Then open it in an iOS Simulator, Android Emulator, or the Expo Go app on your phone.
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+---
 
-## Join the community
+## 💡 How It Works
 
-Join our community of developers creating universal apps.
+- On the **Home Screen**, select a game type and optionally enter a custom increment time.  
+- Tap **Start Game** to begin — both timers start at the chosen duration.  
+- The first player’s timer starts when a timer is clicked.  
+- Tap the screen to **switch turns**.  
+- Use the **side buttons** to pause, reset, or return to the menu.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+---
+
+## 🧩 Future Improvements
+
+- 🔊 Sound and vibration feedback on turn switch 
+- 🧾 Match history storage  
+- 🌙 Dark mode support  
+- 🌐 Multiplayer integration (online timer sync)
